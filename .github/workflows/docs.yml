@@ -1,0 +1,20 @@
+name: PublishDocumentation
+
+on: 
+  release:
+    types: [published]
+
+jobs:
+  deploy_docs:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+        
+      - name: Get version
+        run: export LIB_VERSION=$(git describe --tags `git rev-list --tags --max-count=1`)
+    
+      - name: Publish Jazzy Docs
+        uses: steven0351/publish-jazzy-docs@v1
+        with:
+          personal_access_token: ${{ secrets.ACCESS_TOKEN }}
+          args: "--author Mammut Media Marketing UG --author_url https://mammutmedia.eu --github_url https://github.com/mammutmedia/MMModalWebViewController --module-version ENV['LIB_VERSION'] || '1.0' --module MMModalWebViewController"

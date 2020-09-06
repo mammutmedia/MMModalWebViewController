@@ -1,0 +1,34 @@
+os: osx
+osx_image: xcode11.6
+language: objective-c
+
+branches:
+  only:
+    - master
+    - /^\d+\.\d+\.\d+$/
+stages:
+  - name: lint
+    if: NOT branch =~ ^\d+\.\d+\.\d+$
+  - name: test
+    if: type != push OR branch =~ /^\d+\.\d+\.\d+$/
+
+jobs:
+  include:
+    - &pod
+      stage: lint
+      osx_image: xcode11.4
+      env: SWIFT=5.2
+      cache: cocoapods
+      install: gem install cocoapods -v '~> 1.7.0'
+      script: pod lib lint --fail-fast --swift-version=$SWIFT
+    - <<: *pod
+      osx_image: xcode11
+      env: SWIFT=5.1
+
+    - &test
+      stage: test
+      name: iOS / Xcode 11.6
+      xcode_scheme: MMModalWebViewController
+      xcode_project: MMModalWebViewController.xcodeproj
+      xcode_destination: 'platform=iOS Simulator,OS=11.3,name=iPhone X'
+      after_success: bash <(curl -s https://codecov.io/bash)
