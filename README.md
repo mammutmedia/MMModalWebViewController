@@ -27,7 +27,65 @@ github "mammutmedia/MMModalWebViewController"
 ```
 ## Usage
 
-tbd
+MMModalWebViewController was designed to be used without pain. Just set the configuration and present the ViewController.
+
+```swift
+import MMModalWebViewController
+
+let config = MMConfig
+present(url: URL(string: "https://github.com")!, configuration: config)
+```
+
+### Configuration
+
+```swift
+/// Use this property to modify the default icons.
+icons = MMIcons()
+/// Use this property to modify the tint of the header items. Defaults to .labelColor / .black
+tint: UIColor?
+/// Use this property to modify the text color of the url in the header. Defaults to .systemGray2 / R:174 G:174 B:178
+urlColor: UIColor?
+/// Use this property to modify the background color of the controller. Defaults to .systemBackground / .white
+backgroundColor: UIColor?
+/// Use this property to show or hide the back and forward buttons. Defaults to true
+showNavigation: Bool = true
+/// Use this property to modify the loading text. Defaults to "Loading..."
+loadingText: String = "Loading..."
+/// Use this property to modify the progress bar color. Defaults to .blue
+progressBarColor: UIColor = .blue
+/// Use this property to modify the corner radius. Defaults to 16.0
+cornerRadius: CGFloat = 16.0
+/// Use this property to modify the top margin. Defaults to 40.0
+topMargin: CGFloat = 40.0
+/// Use this property to set the delegate
+controllerDelegate: MMModalWebViewControllerDelegate?
+```
+
+### Delegates
+
+```swift
+extension ViewController: MMModalWebViewControllerDelegate {
+    func willAppear(_ webViewController: MMModalWebViewController, webView: WKWebView) {
+        print(#function)
+    }
+
+    func didAppear(_ webViewController: MMModalWebViewController, webView: WKWebView) {
+        print(#function)
+    }
+
+    func willDisappear(_ webViewController: MMModalWebViewController, webView: WKWebView) {
+        print(#function)
+    }
+
+    func didDisappear(_ webViewController: MMModalWebViewController, webView: WKWebView) {
+        print(#function)
+    }
+
+    func contentDidLoad(_ webViewController: MMModalWebViewController, webView: WKWebView) {
+        print(#function)
+    }
+}
+```
 
 ## Contributing
 
