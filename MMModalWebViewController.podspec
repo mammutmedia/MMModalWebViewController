@@ -16,5 +16,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "11.0"
   s.platform = :ios, "11.0"
   s.source_files = 'Source/**/*.swift'
-  s.resources    = ['Resources/*']
+  s.resources = ['Resources/*']
 end

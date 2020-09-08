@@ -41,7 +41,7 @@
 		2792918F25042C92009F4E03 /* MMModalWebViewControllerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMModalWebViewControllerConfiguration.swift; sourceTree = "<group>"; };
 		2792919125042D08009F4E03 /* MMIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMIcons.swift; sourceTree = "<group>"; };
 		2792919425042D45009F4E03 /* MMHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMHelper.swift; sourceTree = "<group>"; };
-		279291BB250433FB009F4E03 /* MMModalWebViewController.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = MMModalWebViewController.podspec; sourceTree = "<group>"; };
+		279291BB250433FB009F4E03 /* MMModalWebViewController.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = MMModalWebViewController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		279291E8250436B8009F4E03 /* MMHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMHeaderView.swift; sourceTree = "<group>"; };
 		27C73BB22504F8240073EDAD /* MMModalWebViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMModalWebViewControllerDelegate.swift; sourceTree = "<group>"; };
 		27E1D4A125046E27003A1190 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -365,6 +365,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -428,6 +429,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -457,7 +459,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 85JKT83335;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -485,7 +487,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 85JKT83335;
 				DYLIB_COMPATIBILITY_VERSION = 1;

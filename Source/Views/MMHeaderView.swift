@@ -23,12 +23,6 @@ class MMHeaderView: UIView {
         let hairline = UIView()
         hairline.backgroundColor = .systemGray
 
-        backButton.setImage(MMConfig.icons.backIcon, for: .normal)
-        backButton.tintColor = MMConfig.tint
-
-        forwardButton.setImage(MMConfig.icons.forwardIcon, for: .normal)
-        forwardButton.tintColor = MMConfig.tint
-
         titleLabel.font = .systemFont(ofSize: 15.0, weight: .semibold)
         titleLabel.textColor = MMConfig.tint
         titleLabel.textAlignment = .center
@@ -36,9 +30,6 @@ class MMHeaderView: UIView {
         urlLabel.font = .systemFont(ofSize: 12.0)
         urlLabel.textColor = MMConfig.urlColor
         urlLabel.textAlignment = .center
-
-        closeButton.setImage(MMConfig.icons.closeIcon, for: .normal)
-        closeButton.tintColor = MMConfig.tint
 
         let titleView = UIView()
         titleView.backgroundColor = .clear

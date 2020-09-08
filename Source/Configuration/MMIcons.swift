@@ -9,8 +9,9 @@
 import UIKit
 
 public struct MMIcons {
+    public var closeIcon: UIImage = imageFromBundle("times-light")
+    public var forwardIcon: UIImage = imageFromBundle("chevron-right-light")
+    public var backIcon: UIImage = imageFromBundle("chevron-left-light")
 
-    public var closeIcon = imageFromBundle("times-light")
-    public var forwardIcon = imageFromBundle("chevron-right-light")
-    public var backIcon = imageFromBundle("chevron-left-light")
+    public init() {}
 }
