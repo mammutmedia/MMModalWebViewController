@@ -20,7 +20,7 @@ open class MMModalWebViewController: UIViewController {
     private weak var delegate: MMModalWebViewControllerDelegate?
 
     /// Get a MMModalWebViewController with the specified configuration.
-    public required init(url: URL, configuration: MMModalWebViewControllerConfiguration) {
+    public required init(url: URL, configuration: MMModalWebViewControllerConfiguration = MMModalWebViewControllerConfiguration()) {
         var newConfig = configuration
         if configuration.tint == nil {
             if #available(iOS 13.0, *) {
@@ -182,6 +182,9 @@ open class MMModalWebViewController: UIViewController {
         headerView?.titleLabel.textColor = MMConfig.tint
         headerView?.urlLabel.textColor = MMConfig.urlColor
         progressView.progressTintColor = MMConfig.progressBarColor
+        headerView?.closeButton.setImage(MMConfig.icons.closeIcon, for: .normal)
+        headerView?.backButton.setImage(MMConfig.icons.backIcon, for: .normal)
+        headerView?.forwardButton.setImage(MMConfig.icons.forwardIcon, for: .normal)
 
         container.layer.cornerRadius = MMConfig.cornerRadius
         container.clipsToBounds = true
@@ -210,14 +213,12 @@ open class MMModalWebViewController: UIViewController {
 
 extension MMModalWebViewController: WKNavigationDelegate {
     public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        print(#function)
         headerView!.titleLabel.text = MMConfig.loadingText
         headerView!.backButton.isEnabled = webView.canGoBack
         headerView!.forwardButton.isEnabled = webView.canGoForward
     }
 
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print(#function)
         headerView!.urlLabel.text = webView.url?.absoluteString
         headerView!.titleLabel.text = webView.title
         headerView!.backButton.isEnabled = webView.canGoBack
