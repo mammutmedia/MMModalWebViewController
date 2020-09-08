@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "MMModalWebViewController"
-  s.version = ENV['LIB_VERSION'] || '0.1.6'
+  s.version = ENV['LIB_VERSION'] || '1.0'
   s.summary = "Facebook-like WebViewController"
   s.homepage = "https://mammutmedia.eu"
   s.license = 'MIT'
@@ -16,4 +16,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "11.0"
   s.platform = :ios, "11.0"
   s.source_files = 'Source/**/*.swift'
+  s.resources    = ['Resources/*']
 end
